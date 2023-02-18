@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
   use( 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use( 'mbbill/undotree')
   use( 'tpope/vim-fugitive')
+  use( 'sakhnik/nvim-gdb')
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
