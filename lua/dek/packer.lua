@@ -24,6 +24,14 @@ return require('packer').startup(function(use)
   use( 'tpope/vim-fugitive')
 
   use {
+	  'nvim-tree/nvim-tree.lua',
+	  requires = {
+		  'nvim-tree/nvim-web-devicons', -- optional, for file icons
+	  },
+	  tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
+
+  use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v1.x',
 	  requires = {
