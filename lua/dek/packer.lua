@@ -19,10 +19,21 @@ return require('packer').startup(function(use)
 	  end
   })
 
+  use {
+	  'nvim-lualine/lualine.nvim',
+	  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+
+  }
+
   use( 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use( 'mbbill/undotree')
   use( 'tpope/vim-fugitive')
-  use( 'sakhnik/nvim-gdb')
+--  use( 'sakhnik/nvim-gdb')a
+  use ('mfussenegger/nvim-dap')
+  use ( "rcarriga/nvim-dap-ui" )
+  use ( "theHamsta/nvim-dap-virtual-text" )
+  use ( 'nvim-telescope/telescope-dap.nvim' )
+  use ( 'mortepau/codicons.nvim' )
 
   use {
 	  'nvim-tree/nvim-tree.lua',
