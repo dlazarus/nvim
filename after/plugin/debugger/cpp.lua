@@ -1,9 +1,12 @@
 local getDebugConfDir = function ()
     local f = io.open("debug-conf/dir", "r")
-    local conf_dir = f:read()
-    f:close()
-
-    return conf_dir
+    if f == nil then
+        return "${workspaceFolder}"
+    else
+        local conf_dir = f:read()
+        f:close()
+        return conf_dir
+    end
 end
 
 
