@@ -10,6 +10,7 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  -- color theme
   use({
 	  'rose-pine/neovim',
 	  as = 'rose-pine',
@@ -19,6 +20,7 @@ return require('packer').startup(function(use)
 	  end
   })
 
+  -- status line
   use {
 	  'nvim-lualine/lualine.nvim',
 	  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -28,12 +30,14 @@ return require('packer').startup(function(use)
   use( 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use( 'mbbill/undotree')
   use( 'tpope/vim-fugitive')
---  use( 'sakhnik/nvim-gdb')a
+
+  -- debugger
   use ('mfussenegger/nvim-dap')
   use ( "rcarriga/nvim-dap-ui" )
   use ( "theHamsta/nvim-dap-virtual-text" )
   use ( 'nvim-telescope/telescope-dap.nvim' )
   use ( 'mortepau/codicons.nvim' )
+
   -- use ( 'natecraddock / workspaces.nvim' )
 
   use {
