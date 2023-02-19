@@ -34,6 +34,7 @@ return require('packer').startup(function(use)
   use ( "theHamsta/nvim-dap-virtual-text" )
   use ( 'nvim-telescope/telescope-dap.nvim' )
   use ( 'mortepau/codicons.nvim' )
+  -- use ( 'natecraddock / workspaces.nvim' )
 
   use {
 	  'nvim-tree/nvim-tree.lua',
