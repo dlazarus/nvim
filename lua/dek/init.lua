@@ -1,4 +1,6 @@
 require("dek.remap")
+require("bufferline").setup{}
+
 --vim.wo.number = true
 
 vim.opt.number = true

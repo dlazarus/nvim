@@ -61,6 +61,12 @@ return require('packer').startup(function(use)
   use( 'hrsh7th/cmp-cmdline' )
   use( 'hrsh7th/nvim-cmp' )
 
+
+  use {
+	  'akinsho/bufferline.nvim',
+	  tag = 'v3.*'
+  }
+
   --[[
   use {
 	  'VonHeikemen/lsp-zero.nvim',
