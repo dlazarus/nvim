@@ -1,1 +1,2 @@
 require("dek")
+require("anysolo")

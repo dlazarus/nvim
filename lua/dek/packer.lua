@@ -73,4 +73,9 @@ return require('packer').startup(function(use)
   use ('tpope/vim-commentary')
   use ('preservim/nerdtree')
 
+  -- cmake
+  use ('Shatur/neovim-tasks')
+  use ('skywind3000/asyncrun.vim')
+
+
 end)
