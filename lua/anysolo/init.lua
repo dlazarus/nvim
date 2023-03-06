@@ -11,12 +11,10 @@ function anysolo_setCourse()
         return
     end
 
-
     io.close(f)
 
-
     vim.keymap.set("n", "<leader>aa", anysolo_runFile)
-
+    vim.keymap.set("n", "<leader>au", anysolo_updateCmake)
 
     f = io.open(".anysolo")
     if f ~= nil then
@@ -24,14 +22,11 @@ function anysolo_setCourse()
         return
     end
 
-    vim.cmd.terminal ("mkdir -p " .. buildDir .. " && cd " .. buildDir .. " && cmake -DMAKE_BUILD_TYPE=Debug ../..")
-
-    print("SET")
+    anysolo_updateCmake()
 end
 
 
 function anysolo_runFile()
-    print("Run")
     local fname = string.gsub(vim.api.nvim_buf_get_name(0), vim.loop.cwd(), '')
 
     if string.find(fname, "/examples/") ~= nil then
@@ -39,16 +34,16 @@ function anysolo_runFile()
         local exampleName = string.match(fname, "/examples/(.*).cc")
         local levelName = string.match(fname, ".*/(.*)/unit.*")
         local unitName = string.match(fname, ".*/.*/(.*)/examples/.*")
-        print(unitName)
-
         local cmd = "pushd . && cd " .. buildDir .. " && make " .. levelName .. "_" .. unitName .. "_" .. exampleName
         cmd = cmd .. "&& popd && ./" .. buildDir .. "/" .. prjName .. "/" .. levelName .. "/" .. unitName .. "/" .. exampleName
         vim.cmd.terminal (cmd)
 
     end
+end
 
---    print(fname)
---    print(vim.loop.cwd())
+function anysolo_updateCmake()
+    vim.cmd.terminal ("mkdir -p " .. buildDir .. " && cd " .. buildDir .. " && cmake -DMAKE_BUILD_TYPE=Debug ../..")
+
 end
 
 anysolo_setCourse()
